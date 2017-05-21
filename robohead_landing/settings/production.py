@@ -21,6 +21,8 @@ EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
 
 SECRET_KEY = os.environ.get('SECRET_KEY', '<change_me>')
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 try:
     from .local import *
 except ImportError:
