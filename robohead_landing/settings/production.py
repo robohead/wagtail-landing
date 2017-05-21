@@ -11,6 +11,8 @@ INSTALLED_APPS += ('anymail', )
 ANYMAIL = {
     "MAILGUN_API_KEY": os.environ.get(
         'MAILGUN_API_KEY', '<your Mailgun key>'),
+    "MAILGUN_SENDER_DOMAIN": os.environ.get(
+        'MAILGUN_SENDER_DOMAIN'),
 }
 
 DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
