@@ -19,6 +19,8 @@ DATABASES['default'].update(db_from_env)
 
 EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
 
+SECRET_KEY = os.environ.get('SECRET_KEY', '<change_me>')
+
 try:
     from .local import *
 except ImportError:
