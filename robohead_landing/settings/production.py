@@ -24,6 +24,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '<change_me>')
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'example.com').split(',')
+
 try:
     from .local import *
 except ImportError:
