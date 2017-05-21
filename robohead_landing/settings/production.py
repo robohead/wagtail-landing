@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 import os
 import dj_database_url
+from distutils.util import strtobool
 
 from .base import *
 
@@ -12,7 +13,7 @@ ANYMAIL = {
         'MAILGUN_API_KEY', '<your Mailgun key>'),
 }
 
-DEBUG = False
+DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
