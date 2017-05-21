@@ -1,0 +1,5 @@
+{{ subject }}
+
+{% for key, value in object.items %}
+{% if value %}{{ key }}: {{ value }}{% endif %}
+{% endfor %}
